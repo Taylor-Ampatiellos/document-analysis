@@ -8,10 +8,12 @@ How to Use:
 		  	 - A word frequency list, where the first pair element is a word
 		  	   and the second pair element is the number of times it appears
 		  	   throughout all scanned documents.
-		  	 - A word length frequency list, where the first pair element is
-		  	   an int signifying word length and the second pair element is
-		  	   the number of words of this length appearing throughout all
-		  	   scanned documents.
+		  	 - A word length frequency bar graph, where the x-axis is word length
+		  	   and the y-axis is the number of times a word of that length
+		  	   appears throughout the scanned documents.
+		  	 - A letter frequency bar graph, where the x-axis is each letter
+		  	   of the English alphabet, and the y-axis is the number of times
+		  	   the letter appears throughout the scanned documents.
 		- The second, accessed with the "search" argument, scans a given 
 		  directory for .docx files and returns a list of files containing
 		  the given search term.
