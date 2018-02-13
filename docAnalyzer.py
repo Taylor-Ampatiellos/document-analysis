@@ -1,5 +1,7 @@
 from docx import Document
-import os, collections, sys
+import os, collections, sys, string
+import numpy as np
+import matplotlib.pyplot as plt
 
 # Get all words from file 'filename' 
 def getText(filename, fullText):
@@ -44,8 +46,65 @@ def lists_from_directory(directory):
     WFD = wordFreqDict(fullText)             
     LFD = lengthFreqDict(fullText)
 
-    print (list(collections.OrderedDict(sorted(WFD.items(), key=lambda t: t[1], reverse = True)).items()))
-    print (list(collections.OrderedDict(sorted(LFD.items(), key=lambda t: t[1], reverse = True)).items()))
+    print (collections.OrderedDict(sorted(WFD.items())))
+    graphlength (LFD)
+    graphletters (fullText)
+
+def graphlength (LFD):
+    LFD = collections.OrderedDict(sorted(LFD.items()))
+    n_groups = len(LFD)
+    lengths = []
+    counts = []
+
+    for key in LFD:
+        lengths.append(key)
+        counts.append(LFD[key])
+
+    fig, ax = plt.subplots()
+
+    index = np.arange(n_groups)
+    bar_width = 0.35
+
+    opacity = 0.4
+
+    rects1 = plt.bar(index, counts, bar_width,
+                     alpha=opacity,
+                     color='b')
+
+    plt.xlabel('Number of Letters')
+    plt.ylabel('Word Count')
+    plt.title('Distribution of Word Lengths')
+    plt.xticks(index, lengths)
+
+    plt.tight_layout()
+    plt.show()
+
+def graphletters (fullText):
+    allstrings = ''.join(fullText)
+    count = collections.Counter(allstrings)
+    graph_list = []
+    
+    for letter in list(string.ascii_lowercase):
+        graph_list.append (count[letter])
+
+    index = np.arange(26)
+    bar_width = 0.35
+
+    opacity = 0.4
+
+    rects1 = plt.bar(index, graph_list, bar_width,
+                     alpha=opacity,
+                     color='b')
+
+    plt.xlabel('Letter')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Letters Used')
+    plt.xticks(index, list(string.ascii_lowercase))
+
+    plt.tight_layout()
+    plt.show()
+
+    
 
 #
 def search_directory(directory, term):
