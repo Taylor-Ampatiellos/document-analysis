@@ -23,9 +23,10 @@ Syntax:
 
 	Note that inputting '.' for the directory scans the current directory.
 
+Outside Packages Used:
+	python-docx
+	matplotlib (https://matplotlib.org)
+
 Known Bugs:
 	- Search raises an unchecked exception if the .docx file is not readable
 	  (such as with a temporary file). 
-
-Planned Changes:
-	- Display word length frequency as a graph.
