@@ -3,11 +3,8 @@ Creator: Taylor Ampatiellos
 
 How to Use:
 	This program has two current functions.
-		- The first, accessed with the "lists" argument, scans a given directory
-		  for .docx files, then returns two lists of pairs:
-		  	 - A word frequency list, where the first pair element is a word
-		  	   and the second pair element is the number of times it appears
-		  	   throughout all scanned documents.
+		- The first, accessed with the "graphs" argument, scans a given directory
+		  for .docx files, then returns two bar graphs:
 		  	 - A word length frequency bar graph, where the x-axis is word length
 		  	   and the y-axis is the number of times a word of that length
 		  	   appears throughout the scanned documents.
