@@ -33,7 +33,7 @@ def lengthFreqDict(fullText):
     return lengthFreq
 
 # 
-def lists_from_directory(directory):
+def graphs_from_directory(directory):
     fullText = []
     for path, subdirs, files in os.walk(directory):
         for f in files:
@@ -43,10 +43,10 @@ def lists_from_directory(directory):
                 #except:
                 #    print ("Skipping document" + f)
     
-    WFD = wordFreqDict(fullText)             
+    #WFD = wordFreqDict(fullText)             
     LFD = lengthFreqDict(fullText)
 
-    print (collections.OrderedDict(sorted(WFD.items())))
+    #print (collections.OrderedDict(sorted(WFD.items())))
     graphlength (LFD)
     graphletters (fullText)
 
@@ -135,8 +135,8 @@ try:
                     search_directory(directory, term)
                 except:
                     print ("Please input search term.")
-            elif prog == "lists":
-                lists_from_directory(directory)
+            elif prog == "graphs":
+                graphs_from_directory(directory)
         else:
             print ("Invalid directory.")
     except IndexError:
