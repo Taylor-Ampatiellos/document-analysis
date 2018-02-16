@@ -60,8 +60,6 @@ def graphlength (LFD):
         lengths.append(key)
         counts.append(LFD[key])
 
-    fig, ax = plt.subplots()
-
     index = np.arange(n_groups)
     bar_width = 0.35
 

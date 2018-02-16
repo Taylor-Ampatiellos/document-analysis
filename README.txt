@@ -11,6 +11,8 @@ How to Use:
 		  	 - A letter frequency bar graph, where the x-axis is each letter
 		  	   of the English alphabet, and the y-axis is the number of times
 		  	   the letter appears throughout the scanned documents.
+		  Note that the second graph is not shown until the first graph
+		  is closed.
 		- The second, accessed with the "search" argument, scans a given 
 		  directory for .docx files and returns a list of files containing
 		  the given search term.
