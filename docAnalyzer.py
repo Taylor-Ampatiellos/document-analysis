@@ -12,6 +12,7 @@ def getText(filename, fullText):
     return fullText
 
 # Return unordered dict of word frequencies
+# (Currently Unused)
 def wordFreqDict(fullText):
     wordFreq = []  
     for word in fullText:
@@ -32,7 +33,8 @@ def lengthFreqDict(fullText):
 
     return lengthFreq
 
-# 
+# Calls getText() and uses the output to
+# print the two graphs
 def graphs_from_directory(directory):
     fullText = []
     for path, subdirs, files in os.walk(directory):
@@ -41,7 +43,7 @@ def graphs_from_directory(directory):
                 #try:
                     getText(os.path.join(path, f), fullText)
                 #except:
-                #    print ("Skipping document" + f)
+                #   print ("Skipping document" + f)
     
     #WFD = wordFreqDict(fullText)             
     LFD = lengthFreqDict(fullText)
@@ -50,6 +52,7 @@ def graphs_from_directory(directory):
     graphlength (LFD)
     graphletters (fullText)
 
+# Given a dictionary of word lengths, outputs a bar graph
 def graphlength (LFD):
     LFD = collections.OrderedDict(sorted(LFD.items()))
     n_groups = len(LFD)
@@ -77,6 +80,8 @@ def graphlength (LFD):
     plt.tight_layout()
     plt.show()
 
+# Given a list of all text in the scanned files,
+# outputs a bar graph of letter usage
 def graphletters (fullText):
     allstrings = ''.join(fullText)
     count = collections.Counter(allstrings)
@@ -102,9 +107,8 @@ def graphletters (fullText):
     plt.tight_layout()
     plt.show()
 
-    
-
-#
+# Searches all files in directory for term, then outputs
+# a list of all documents containing term.
 def search_directory(directory, term):
     doclist = []
     for path, subdirs, files in os.walk(directory):
@@ -121,7 +125,8 @@ def search_directory(directory, term):
     else:
         print (doclist)
 
-# Main
+# Check user input for correct syntax, determine which 
+# subprogram to run.
 try:
     prog = sys.argv[1]
     try:
