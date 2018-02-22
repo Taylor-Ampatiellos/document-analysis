@@ -31,3 +31,6 @@ Outside Packages Used:
 Known Bugs:
 	- Search raises an unchecked exception if the .docx file is not readable
 	  (such as with a temporary file). 
+	  
+Planned Changes:
+	- Make length and letter frequency graphs display at the same time.
