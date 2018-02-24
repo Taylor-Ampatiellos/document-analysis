@@ -136,7 +136,7 @@ try:
                 try:
                     term = sys.argv[3]
                     search_directory(directory, term)
-                except:
+                except IndexError:
                     print ("Please input search term.")
             elif prog == "graphs":
                 graphs_from_directory(directory)
@@ -146,4 +146,3 @@ try:
         print("Please input directory.")
 except IndexError:
     print("Please input program instruction.")
-
