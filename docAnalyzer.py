@@ -135,7 +135,7 @@ try:
             if prog == "search":
                 try:
                     term = sys.argv[3]
-                    search_directory(directory, term)
+                    search_directory(directory, term.lower())
                 except IndexError:
                     print ("Please input search term.")
             elif prog == "graphs":

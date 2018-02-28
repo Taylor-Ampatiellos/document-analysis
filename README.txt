@@ -31,9 +31,6 @@ Outside Packages Used:
 Known Bugs:
 	- Search raises an unchecked exception if the .docx file is not readable
 	  (such as with a temporary file). 
-	- The search term "QA" does not seem to work (I was testing this program 
-	  using assorted cover letters I have written). Looking into why this term
-	  specifically does not work.
 	  
 Planned Changes:
 	- Make length and letter frequency graphs display at the same time.
