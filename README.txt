@@ -3,8 +3,8 @@ Creator: Taylor Ampatiellos
 
 How to Use:
 	This program has two current functions.
-		- The first, accessed with the "graphs" argument, scans a given directory
-		  for .docx files, then returns two bar graphs:
+		- The first function, accessed with the "graphs" argument, scans a given 
+		  directory for .docx files then returns two bar graphs:
 		  	 - A word length frequency bar graph, where the x-axis is word length
 		  	   and the y-axis is the number of times a word of that length
 		  	   appears throughout the scanned documents.
@@ -13,13 +13,13 @@ How to Use:
 		  	   the letter appears throughout the scanned documents.
 		  Note that the second graph is not shown until the first graph
 		  is closed.
-		- The second, accessed with the "search" argument, scans a given 
+		- The second function, accessed with the "search" argument, scans a given 
 		  directory for .docx files and returns a list of files containing
 		  the given search term.
 
 Syntax:
 	The program takes 2 or 3 arguments, depending on the intended function.
-		- Lists: docAnalyzer.py lists [directory]
+		- Graphs: docAnalyzer.py graphs [directory]
 		- Search: docAnalyzer.py search [directory] [term]
 
 	Note that inputting '.' for the directory scans the current directory.
@@ -27,10 +27,6 @@ Syntax:
 Outside Packages Used:
 	python-docx
 	matplotlib (https://matplotlib.org)
-
-Known Bugs:
-	- Search raises an unchecked exception if the .docx file is not readable
-	  (such as with a temporary file). 
 	  
 Planned Changes:
 	- Make length and letter frequency graphs display at the same time.
