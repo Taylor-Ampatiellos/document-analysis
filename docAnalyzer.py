@@ -3,22 +3,13 @@ import os, collections, sys, string
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Get all words from file 'filename' 
+# Add all words from file 'filename' to 'fulltext'
 def getText(filename, fullText):
     doc = Document(filename)
     for para in doc.paragraphs:
         for word in para.text.lower().split():
             fullText.append(word)
     return fullText
-
-# Return unordered dict of word frequencies
-# (Currently Unused)
-def wordFreqDict(fullText):
-    wordFreq = []  
-    for word in fullText:
-        word_count = fullText.count(word) 
-        wordFreq.append((word, word_count)) 
-    return dict(wordFreq)
 
 # Return unordered dict of word-length frequencies
 def lengthFreqDict(fullText):
@@ -33,8 +24,8 @@ def lengthFreqDict(fullText):
 
     return lengthFreq
 
-# Calls getText() and uses the output to
-# print the two graphs
+# Calls getText() on all valid files.
+# Uses collected text as data for graph functions.
 def graphs_from_directory(directory):
     fullText = []
     for path, subdirs, files in os.walk(directory):
@@ -45,15 +36,13 @@ def graphs_from_directory(directory):
         			getText(os.path.join(path, f), fullText)
         		else:
         			print ("Skipped document " + f)
-    
-    #WFD = wordFreqDict(fullText)             
+                
     LFD = lengthFreqDict(fullText)
 
-    #print (collections.OrderedDict(sorted(WFD.items())))
     graphlength (LFD)
     graphletters (fullText)
 
-# Given a dictionary of word lengths, outputs a bar graph
+# Given a dictionary of word lengths, outputs a bar graph.
 def graphlength (LFD):
     LFD = collections.OrderedDict(sorted(LFD.items()))
     n_groups = len(LFD)
@@ -82,7 +71,7 @@ def graphlength (LFD):
     plt.show()
 
 # Given a list of all text in the scanned files,
-# outputs a bar graph of letter usage
+# outputs a bar graph of letter usage.
 def graphletters (fullText):
     allstrings = ''.join(fullText)
     count = collections.Counter(allstrings)
@@ -108,8 +97,8 @@ def graphletters (fullText):
     plt.tight_layout()
     plt.show()
 
-# Searches all files in directory for term, then outputs
-# a list of all documents containing term.
+# Searches all files in 'directory' for 'term', 
+# then outputs a list of all documents containing 'term'.
 def search_directory(directory, term):
     doclist = []
     for path, subdirs, files in os.walk(directory):
@@ -130,8 +119,8 @@ def search_directory(directory, term):
     else:
         print (doclist)
 
-# Check user input for correct syntax, determine which 
-# subprogram to run.
+# Check user input for correct syntax,
+# determine which subprogram to run.
 try:
     prog = sys.argv[1]
     try:
