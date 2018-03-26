@@ -2,12 +2,12 @@ Program: docAnalyzer.py
 Creator: Taylor Ampatiellos
 
 How to Use:
-	This program has two current functions.
+	This program has two current functions:
 		- The first function, accessed with the "graphs" argument, scans a given 
 		  directory for .docx files then returns two bar graphs:
-		  	 - A word length frequency bar graph, where the x-axis is word length
-		  	   and the y-axis is the number of times a word of that length
-		  	   appears throughout the scanned documents.
+		  	 - A word-length frequency bar graph, where the x-axis is 
+		  	   length in letters and the y-axis is the number of times 
+		  	   a word of that length appears throughout the scanned documents.
 		  	 - A letter frequency bar graph, where the x-axis is each letter
 		  	   of the English alphabet, and the y-axis is the number of times
 		  	   the letter appears throughout the scanned documents.
@@ -30,3 +30,6 @@ Outside Packages Used:
 	  
 Planned Changes:
 	- Make length and letter frequency graphs display at the same time.
+	- Display counts above graph bars 
+	  (i.e. "43,251" above the bar for the letter 'e').
+	- Improve readability of output from "search" argument.
