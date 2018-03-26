@@ -32,4 +32,7 @@ Planned Changes:
 	- Make length and letter frequency graphs display at the same time.
 	- Display counts above graph bars 
 	  (i.e. "43,251" above the bar for the letter 'e').
-	- Improve readability of output from "search" argument.
+	- Add options for other kinds of graphs, 
+	  such as a pie chart for letter frequency.
+	- Improve readability of output from "search" argument,
+	  including outputting the full path to each file. 
