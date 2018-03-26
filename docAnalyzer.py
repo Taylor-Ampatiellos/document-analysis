@@ -39,11 +39,12 @@ def graphs_from_directory(directory):
     fullText = []
     for path, subdirs, files in os.walk(directory):
         for f in files:
-            if f.endswith(".docx"):
-                #try:
-                    getText(os.path.join(path, f), fullText)
-                #except:
-                #   print ("Skipping document" + f)
+        	if f.endswith(".docx"):
+        		# Skip temporary files
+        		if not (f.startswith("~")):
+        			getText(os.path.join(path, f), fullText)
+        		else:
+        			print ("Skipped document " + f)
     
     #WFD = wordFreqDict(fullText)             
     LFD = lengthFreqDict(fullText)
@@ -113,12 +114,16 @@ def search_directory(directory, term):
     doclist = []
     for path, subdirs, files in os.walk(directory):
         for f in files:
-            if f.endswith(".docx"):
-                fullText = getText(os.path.join(path, f), [])
-                for word in fullText:
-                    if word == term:
-                        doclist.append(f)
-                        break
+        	if f.endswith(".docx"):
+        		# Skip temporary files
+        		if not (f.startswith("~")):
+        			fullText = getText(os.path.join(path, f), [])
+        			for word in fullText:
+        				if word == term:
+        					doclist.append(f)
+        					break
+        		else:
+        			print ("Skipped document " + f)
 
     if len(doclist) == 0:
         print ("No documents found containing input term.")
@@ -140,9 +145,11 @@ try:
                     print ("Please input search term.")
             elif prog == "graphs":
                 graphs_from_directory(directory)
+            else:
+            	print("Invalid program function. Please input 'graphs' or 'search'.") 
         else:
             print ("Invalid directory.")
     except IndexError:
         print("Please input directory.")
 except IndexError:
-    print("Please input program instruction.")
+    print("Please input program function.")
